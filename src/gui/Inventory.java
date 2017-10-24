@@ -1,4 +1,4 @@
-package gui.project.assignment2;
+package GUI;
 
 public class Inventory 
 {
