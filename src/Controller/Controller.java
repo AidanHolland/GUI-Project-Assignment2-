@@ -1,8 +1,10 @@
 package Controller;
-
+import View.*;
+import javax.swing.JFrame;
 public class Controller 
 {
     private static boolean running;
+    private static Inventory i;
     
     public static void main(String[] args) 
     {
@@ -13,9 +15,11 @@ public class Controller
     
     public void run()
     {
+        i = new Inventory();
         while(running)
         {
             //Show GUI
+            i.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
     }
 }

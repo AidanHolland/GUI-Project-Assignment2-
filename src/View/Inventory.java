@@ -13,5 +13,17 @@ public class Inventory extends JFrame
     JPanel wearableTab = new JPanel();
     
     
+    public Inventory()
+    {
+        
+        
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    
+    
+    public JFrame getFrame()
+    {
+        return frame;
+    }
     
 }

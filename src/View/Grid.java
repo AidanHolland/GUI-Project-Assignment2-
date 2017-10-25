@@ -1,8 +1,10 @@
-
 package View;
 
+import javax.swing.JFrame; //imports JFrame library
+import javax.swing.JButton; //imports JButton library
 
-public class GridLayout 
+
+public class Grid 
 {
     //Have an option for width and height
     
