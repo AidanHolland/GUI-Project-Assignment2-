@@ -19,7 +19,7 @@ public class Controller
         while(running)
         {
             //Show GUI
-            i.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            
         }
     }
 }

@@ -15,8 +15,6 @@ public class Inventory extends JFrame
     
     public Inventory()
     {
-        
-        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     

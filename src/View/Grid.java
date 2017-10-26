@@ -1,12 +1,27 @@
 package View;
 
-import javax.swing.JFrame; //imports JFrame library
-import javax.swing.JButton; //imports JButton library
-
+import javax.swing.JFrame; 
+import javax.swing.JButton; 
+import java.awt.GridLayout;
 
 public class Grid 
 {
     //Have an option for width and height
+    JFrame frame = new JFrame();
+    JButton[][] grid;
+    
+    public Grid(int width, int height)
+    {
+        frame.setLayout(new GridLayout(width, height));
+        grid = new JButton[width][height];
+        for(int y = 0; y < height; y++)
+        {
+            for(int x = 0; x < width; x++)
+            {
+                grid[x][y] = new JButton();
+            }
+        }
+    }
     
 
     //Optional, allow for moving items from one spot to another
