@@ -1,16 +1,15 @@
 package Controller;
 import View.*;
+import Items.*;
+import java.util.*;
+
 import javax.swing.JFrame;
 public class Controller 
 {
     private static boolean running;
     private static Inventory i;
-    
-    public static void main(String[] args) 
-    {
-        Controller c = new Controller();
-        //c.run();
-    }
+    private ArrayList<Item> bag;
+
     
     
     public void run()
@@ -21,5 +20,13 @@ public class Controller
             //Show GUI
             
         }
+    }
+    
+    
+    
+    
+    public void addItem(Item i)
+    {
+        //
     }
 }
