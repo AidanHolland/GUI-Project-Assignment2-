@@ -1,4 +1,4 @@
-package Items;
+package Model;
 
 public class Consumable extends Item
 {
@@ -6,6 +6,9 @@ public class Consumable extends Item
     public enum Type{HealthPotion, ManaPotion}
     
     
+     public String toString()
+    {
+        return "";
+    }
     
-    ;
 }

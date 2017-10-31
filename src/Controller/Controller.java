@@ -1,6 +1,6 @@
 package Controller;
+import Model.Item;
 import View.*;
-import Items.*;
 import java.util.*;
 
 import javax.swing.JFrame;

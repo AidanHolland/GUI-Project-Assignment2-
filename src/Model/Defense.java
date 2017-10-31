@@ -1,4 +1,4 @@
-package Items;
+package Model;
 
 public class Defense extends Item
 {
@@ -7,5 +7,9 @@ public class Defense extends Item
     
     public enum Type{Buckler, Kite, Spiked};
     
+     public String toString()
+    {
+        return "";
+    }
     
 }

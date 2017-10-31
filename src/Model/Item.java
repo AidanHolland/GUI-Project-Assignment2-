@@ -1,10 +1,10 @@
-package Items;
+package Model;
 
 public abstract class Item 
 {
     private int value;
     private String name;
-    private String picPath;
+    protected String picPath;
     
     
     public Item(){}
@@ -39,6 +39,10 @@ public abstract class Item
     {
         return picPath;
     }
+    
+    @Override
+    public abstract String toString();
+   
     
     
 }

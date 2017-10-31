@@ -1,4 +1,4 @@
-package Items;
+package Model;
 
 public class Weapon extends Item
 {
@@ -11,5 +11,10 @@ public class Weapon extends Item
     public Weapon()
     {
         
+    }
+    
+    public String toString()
+    {
+        return "";
     }
 }

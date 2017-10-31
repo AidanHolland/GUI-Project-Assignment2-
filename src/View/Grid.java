@@ -1,38 +1,36 @@
 package View;
 
+import Model.Item;
 import javax.swing.JFrame; 
-import javax.swing.JButton; 
 import java.awt.GridLayout;
-import Items.*;
 
-public class Grid 
+
+public class Grid extends GridLayout
 {
     //Have an option for width and height
     JFrame frame = new JFrame();
-    JButton[][] grid;
+    GridButton[][] grid;
     GridType type;
     
     public enum GridType{Weapon, Defense, Wearable, Consumable}
     
-    public Grid(int width, int height, GridType type)
+    
+    
+    public Grid(int width, int height, String classInput)
     {
+        
         this.type = type;
         frame.setLayout(new GridLayout(width, height));
-        grid = new JButton[width][height];
+        grid = new GridButton[width][height];
         for(int y = 0; y < height; y++)
         {
             for(int x = 0; x < width; x++)
             {
-                grid[x][y] = new JButton();
+                grid[x][y] = new GridButton(classInput);
             }
         }
     }
     
-    
-    private void loadWith(Class<? extends Item> itemClass)
-    {
-        
-    }
 
     //Optional, allow for moving items from one spot to another
     //If mouse button clicked down on image
