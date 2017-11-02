@@ -17,6 +17,7 @@ public class GridButton extends JButton implements MouseListener
        
       checkClass(classInput);  
       addMouseListener(this);
+      image = new ImageIcon("");
       
     }
     

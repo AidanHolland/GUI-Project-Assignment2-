@@ -1,8 +1,11 @@
 package View;
 import javax.swing.*;
+import java.awt.*;
+import javax.swing.border.*;
+import java.awt.event.*;
 import Model.*;
 
-public class Inventory extends JFrame
+public class Inventory extends JFrame implements ActionListener
 {
     //Main section
     JFrame frame = new JFrame("Inventory");
@@ -33,13 +36,24 @@ public class Inventory extends JFrame
     
     public Inventory()
     {
+        createTabs();
         createButtons();
         createGrids();
+        add(tabs);
         frame.setVisible(true);
+        frame.setPreferredSize(new Dimension(600, 400));
+        //Centre frame
+        frame.setLocationRelativeTo(null);
+        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public void itemComboBox()
+    public void actionPerformed(ActionEvent e)
+    {
+        
+    }
+    
+    private void itemComboBox()
     {
         //Upon click of button
         //For each Item type listed
@@ -49,18 +63,26 @@ public class Inventory extends JFrame
         
     }
     
-    public void createComboBox()
+    private void createComboBox()
     {
         
     }
     
-    public void createButtons()
+    private void createButtons()
     {
         JButton addButton = new JButton();
         JButton deleteButton = new JButton();
     }
     
-    public void createGrids()
+    private void createTabs()
+    {
+        tabs.addTab("Weapons", weaponTab);
+        tabs.addTab("Defense", defenseTab);
+        tabs.addTab("Wearables", wearableTab);
+        tabs.addTab("Consumables", consumableTab);
+    }
+    
+    private void createGrids()
     {
       //Consumable Tab
       consGrid = new Grid(5, 5, "Consumable");
