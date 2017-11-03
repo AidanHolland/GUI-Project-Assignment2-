@@ -7,9 +7,11 @@ import Model.*;
 
 public class Inventory extends JFrame implements ActionListener
 {
+    public static Inventory i = new Inventory();
     //Main section
     JFrame frame = new JFrame("Inventory");
     JTabbedPane tabs = new JTabbedPane();
+    JTextArea info = new JTextArea();
     
     JPanel consumableTab = new JPanel();
     JPanel defenseTab = new JPanel();
@@ -31,7 +33,7 @@ public class Inventory extends JFrame implements ActionListener
     //Wearable Tab
     Grid wearGrid;
     
-    //Bag
+    //Bag (Bottom area)
     Grid bagGrid;
     
     public Inventory()
@@ -101,13 +103,15 @@ public class Inventory extends JFrame implements ActionListener
     }
     
     
-    public static void createStatsBox(Item i)
+    public void createStatsBox(Item i)
     {
-        
+        info.setText("");
+        info.append(i.toString());        
     }
     
-    public static void deleteStatsBox()
+    public void deleteStatsBox()
     {
+        info.setText("");
     }
     
     public JFrame getFrame()

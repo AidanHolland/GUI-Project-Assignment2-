@@ -17,7 +17,7 @@ public class GridButton extends JButton implements MouseListener
        
       checkClass(classInput);  
       addMouseListener(this);
-      image = new ImageIcon("");
+      image = new ImageIcon("./Images/empty.png");
       
     }
     
@@ -68,7 +68,7 @@ public class GridButton extends JButton implements MouseListener
    public void showStats()
    {
        //Create new box with stats from toString, 
-       Inventory.createStatsBox(item);
+       Inventory.i.createStatsBox(item);
    }
     
   
@@ -95,6 +95,7 @@ public class GridButton extends JButton implements MouseListener
   public void mouseEntered(MouseEvent e) 
   {
       //Highlight
+      
       //Show stats
       showStats();
   }
@@ -103,7 +104,7 @@ public class GridButton extends JButton implements MouseListener
   {
       //Un-highlight
       //Stop showing stats
-      Inventory.deleteStatsBox();
+      Inventory.i.deleteStatsBox();
   }
  
     

@@ -2,12 +2,20 @@ package Model;
 
 public abstract class Item 
 {
-    private int value;
-    private String name;
+    protected int value;
+    protected String name;
     protected String picPath;
     
     
     public Item(){}
+    
+    public enum Type{};
+    
+    public Item(int value, String name)
+    {
+        this.value = value;
+        this.name = name;
+    }
     
     
     public void setValue()
