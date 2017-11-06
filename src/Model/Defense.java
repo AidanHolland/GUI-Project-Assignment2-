@@ -20,7 +20,8 @@ public class Defense extends Item
     
      public String toString()
     {
-        return "";
+        return  "Item Name: " + this.getName() + ".\n" + "Armour: " + this.armour + 
+                ".\n " + "Value: " +this.getValue() + " gp.\n" + "Shield Type: " +  this.type + ".\n";
     }
     
 }

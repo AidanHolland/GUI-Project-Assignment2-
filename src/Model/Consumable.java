@@ -10,13 +10,14 @@ public class Consumable extends Item
      public Consumable(Type type, int value, String name)
     {
         super(value, name);
-        this.picPath = "./Images/consumable.png";
+        this.picPath = "Images/consumable.png";
         this.type = type;
     }
     
      public String toString()
     {
-        return "" + "" + "";
+         return  "Item Name: " + this.getName() + ".\n " + "Value: " + 
+                 this.getValue() + " gp.\n" + "Consumable Type: " +  this.type + ".\n";
     }
     
 }

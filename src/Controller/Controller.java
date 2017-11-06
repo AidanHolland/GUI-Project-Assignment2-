@@ -2,6 +2,7 @@ package Controller;
 import Model.Item;
 import View.*;
 import java.util.*;
+import java.io.File;
 
 import javax.swing.JFrame;
 public class Controller 
@@ -15,6 +16,7 @@ public class Controller
     public void run()
     {
         i = new Inventory();
+        System.out.println(new File("").getAbsolutePath());
         while(running)
         {
             //Show GUI

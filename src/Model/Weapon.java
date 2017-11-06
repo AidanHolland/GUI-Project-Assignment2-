@@ -18,8 +18,23 @@ public class Weapon extends Item
         this.type = type;
     }
     
+    public int getDamage()
+    {
+        return damage;
+    }
+    public void setDamage(int damage)
+    {
+        this.damage = damage;
+    }
+    
+    public Type getType()
+    {
+        return type;
+    }
+    
     public String toString()
     {
-        return "";
+         return  "Item Name: " + this.getName() + ".\n" + "Damage: " + this.getDamage() + 
+                ".\n " + "Value: " +this.getValue() + " gp.\n" + "Weapon Type: " +  this.getType() + ".\n";
     }
 }

@@ -7,7 +7,8 @@ import Model.*;
 
 public class Inventory extends JFrame implements ActionListener
 {
-    public static Inventory i = new Inventory();
+    public static Inventory i;
+    
     //Main section
     JFrame frame = new JFrame("Inventory");
     JTabbedPane tabs = new JTabbedPane();
@@ -41,13 +42,16 @@ public class Inventory extends JFrame implements ActionListener
         createTabs();
         createButtons();
         createGrids();
-        add(tabs);
+        frame.add(tabs);
         frame.setVisible(true);
-        frame.setPreferredSize(new Dimension(600, 400));
+        
+        frame.setSize(600, 400);
         //Centre frame
         frame.setLocationRelativeTo(null);
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        GridButton g = new GridButton("Defense");
+        frame.add(g);
     }
     
     public void actionPerformed(ActionEvent e)
@@ -89,7 +93,7 @@ public class Inventory extends JFrame implements ActionListener
       //Consumable Tab
       consGrid = new Grid(5, 5, "Consumable");
       consumableTab.setLayout(consGrid);
-      frame.add(consumableTab);
+      
       //Defense Tab
       defGrid = new Grid(5, 5, "Defense");
       defenseTab.setLayout(defGrid);

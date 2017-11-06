@@ -6,18 +6,38 @@ import javax.swing.ImageIcon;
 import java.util.*;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
 
 public class GridButton extends JButton implements MouseListener
 {
     private Item item;
     private ImageIcon image;
-
+    private boolean statsShowed = false;
+    
+    public GridButton(Icon icon, String classInput)
+    {
+        super(icon);
+        
+    }
+    
+    
     public GridButton(String classInput)
     {
        
       checkClass(classInput);  
       addMouseListener(this);
-      image = new ImageIcon("./Images/empty.png");
+      try
+      {
+        image = new ImageIcon("Images/empty.png");
+        this.setIcon(image);
+      }
+      catch(Exception e)
+      {
+        System.out.println(e);
+      }
+      
       
     }
     
@@ -68,7 +88,18 @@ public class GridButton extends JButton implements MouseListener
    public void showStats()
    {
        //Create new box with stats from toString, 
-       Inventory.i.createStatsBox(item);
+       try
+       {
+            if(item.getName() != null)
+            {
+                Inventory.i.createStatsBox(item);
+                statsShowed = true;
+            }
+       }
+       catch(Exception e)
+       {
+           System.out.println(e);
+       }
    }
     
   
@@ -104,7 +135,18 @@ public class GridButton extends JButton implements MouseListener
   {
       //Un-highlight
       //Stop showing stats
-      Inventory.i.deleteStatsBox();
+      try
+      {
+            if(statsShowed == true)
+            {
+                Inventory.i.deleteStatsBox();
+                statsShowed = false;
+            }
+      }
+      catch(Exception ex)
+      {
+            System.out.println(ex);
+      }
   }
  
     
