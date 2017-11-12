@@ -13,7 +13,7 @@ public class Weapon extends Item
     public Weapon(Type type, int damage, int value, String name)
     {
         super(value, name);
-        this.picPath = "./Images/weapon.png";
+        this.picPath = "/Images/weapon.png";
         this.damage = damage;
         this.type = type;
     }

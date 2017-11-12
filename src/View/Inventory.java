@@ -1,16 +1,15 @@
 package View;
 import javax.swing.*;
-import java.awt.*;
-import javax.swing.border.*;
 import java.awt.event.*;
 import Model.*;
+
 
 public class Inventory extends JFrame implements ActionListener
 {
     public static Inventory i;
     
     //Main section
-    JFrame frame = new JFrame("Inventory");
+    public static JFrame frame = new JFrame("Inventory");
     JTabbedPane tabs = new JTabbedPane();
     JTextArea info = new JTextArea();
     
@@ -18,9 +17,10 @@ public class Inventory extends JFrame implements ActionListener
     JPanel defenseTab = new JPanel();
     JPanel weaponTab = new JPanel();
     JPanel wearableTab = new JPanel();
+    ButtonController bc;
     
-    JButton addButton;
-    JButton deleteButton;
+    private JButton addButton;
+    private JButton deleteButton;
     
     //Consumable Tab
     Grid consGrid;
@@ -41,6 +41,7 @@ public class Inventory extends JFrame implements ActionListener
     {
         createTabs();
         createButtons();
+        
         createGrids();
         frame.add(tabs);
         frame.setVisible(true);
@@ -50,8 +51,7 @@ public class Inventory extends JFrame implements ActionListener
         frame.setLocationRelativeTo(null);
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        GridButton g = new GridButton("Defense");
-        frame.add(g);
+     
     }
     
     public void actionPerformed(ActionEvent e)
@@ -76,8 +76,11 @@ public class Inventory extends JFrame implements ActionListener
     
     private void createButtons()
     {
+        bc = new ButtonController();
         JButton addButton = new JButton();
         JButton deleteButton = new JButton();
+        addButton.addActionListener(bc);
+        deleteButton.addActionListener(bc);
     }
     
     private void createTabs()
@@ -92,6 +95,8 @@ public class Inventory extends JFrame implements ActionListener
     {
       //Consumable Tab
       consGrid = new Grid(5, 5, "Consumable");
+      //consumableTab.add(consGrid.returnGrid());
+      
       consumableTab.setLayout(consGrid);
       
       //Defense Tab
@@ -123,6 +128,14 @@ public class Inventory extends JFrame implements ActionListener
         return frame;
     }
     
+    public JButton getAddButton()
+    {
+        return addButton;
+    }
     
+    public JButton getDeleteButton()
+    {
+        return deleteButton;
+    }
     
 }

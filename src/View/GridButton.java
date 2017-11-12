@@ -16,12 +16,7 @@ public class GridButton extends JButton implements MouseListener
     private ImageIcon image;
     private boolean statsShowed = false;
     
-    public GridButton(Icon icon, String classInput)
-    {
-        super(icon);
-        
-    }
-    
+  
     
     public GridButton(String classInput)
     {
@@ -30,19 +25,21 @@ public class GridButton extends JButton implements MouseListener
       addMouseListener(this);
       try
       {
-        image = new ImageIcon("Images/empty.png");
-        this.setIcon(image);
+        image = new ImageIcon("/Images/empty.png");
+        
+        
       }
       catch(Exception e)
       {
         System.out.println(e);
       }
       
-      
+     
     }
     
     public void addItem(Item i)
     {
+        
         this.item = i;
         try
         {

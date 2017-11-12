@@ -6,9 +6,16 @@ public class Wearable extends Item
     
     public enum Type{Helmet, Gauntlet, ChestPlate}
     
+    public Wearable(){}
     
-     public String toString()
+    public Type getType()
     {
-        return "";
+        return type;
+    }
+    
+      public String toString()
+    {
+         return  "Item Name: " + this.getName() +  ".\n " + "Value: " +
+                 this.getValue() + " gp.\n" + "Weapon Type: " +  this.getType() + ".\n";
     }
 }

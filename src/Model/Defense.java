@@ -13,7 +13,7 @@ public class Defense extends Item
     public Defense(Type type, int armour, int value, String name)
     {
         super(value, name);
-        this.picPath = "./Images/defense.png";
+        this.picPath = "/Images/defense.png";
         this.armour = armour;
         this.type = type;
     }

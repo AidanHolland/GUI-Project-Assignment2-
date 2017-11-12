@@ -19,7 +19,7 @@ public class Grid extends GridLayout
     public Grid(int width, int height, String classInput)
     {
         
-        this.type = type;
+        //this.type = type;
         frame.setLayout(new GridLayout(width, height));
         grid = new GridButton[width][height];
         for(int y = 0; y < height; y++)
@@ -27,8 +27,14 @@ public class Grid extends GridLayout
             for(int x = 0; x < width; x++)
             {
                 grid[x][y] = new GridButton(classInput);
+                frame.add(grid[x][y]);
             }
         }
+    }
+    
+    public JFrame returnGrid()
+    {
+        return frame;
     }
     
 
