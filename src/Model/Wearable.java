@@ -2,20 +2,22 @@ package Model;
 
 public class Wearable extends Item
 {
-    Type type;
-    
+    //Removed due to time constraints
     public enum Type{Helmet, Gauntlet, ChestPlate}
     
     public Wearable(){}
+
     
-    public Type getType()
+    public Wearable(int value, String name)
     {
-        return type;
+        super(value, name);
+        this.picPath = "/Images/wearable.png";
     }
+    
     
       public String toString()
     {
-         return  "Item Name: " + this.getName() +  ".\n " + "Value: " +
-                 this.getValue() + " gp.\n" + "Weapon Type: " +  this.getType() + ".\n";
+         return  "Wearable Name: " + this.getName() +  ".\n " + "Value: " +
+                 this.getValue() + " gp.\n";
     }
 }
